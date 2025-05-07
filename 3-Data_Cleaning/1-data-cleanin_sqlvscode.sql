@@ -70,5 +70,12 @@ JOIN layoffs_copy AS t2
 SET t1.industry = t2.industry
 WHERE t1.industry is NULL AND t2.industry is not null;
 
+DELETE
+FROM layoffs_copy
+WHERE total_laid_off IS NULL AND percentage_laid_off IS NULL;
+
+
+
+
 SELECT *
 FROM `layoffs_copy`;
