@@ -76,6 +76,14 @@ WHERE total_laid_off IS NULL AND percentage_laid_off IS NULL;
 
 
 
+update layoffs_copy
+set `date` = STR_TO_DATE(`date`, '%m/%d/%Y');
+
+alter table layoffs_copy
+modify column `date` date;
+
+
+
 
 SELECT *
 FROM `layoffs_copy`;
